@@ -29,25 +29,9 @@ fitted models, the champion against the documented selection rule, a fresh re-sc
 against the reported metrics, and the dashboard data against the reported results. It exits with code 1 if
 any check fails. Resume from a later stage with `--from train` (or any stage name).
 
-## Quick start (individual stages)
-
-```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt && pip install -e .
-
-# Option A: download via the Kaggle API (needs ~/.kaggle/kaggle.json)
-python -m fraud_pipeline.pipeline
-
-# Option B: you already downloaded the CSVs
-python -m fraud_pipeline.pipeline --source local --local-dir /path/to/folder
-
-# Tests (run on a synthetic sample with the same schema)
-pytest -q
-```
-
 Optional: `export CARD_HASH_SALT=<secret>` before running to salt card-number hashing.
 
-## Step 3: data cleaning, preprocessing and EDA
+## Data Cleaning, Preprocessing and EDA
 
 Run after the pipeline. Either open the notebook:
 
@@ -221,9 +205,9 @@ artifacts/                      fitted preprocessors (.joblib)
 
 ## Roadmap
 
-- [x] Step 1: Data pipeline and data engineering
-- [x] Step 3: Data cleaning, preprocessing and EDA
-- [x] Modelling (baselines, gradient boosting, anomaly detectors, threshold tuning)
+- [x] Data Pipeline and Data Engineering
+- [x] Data Cleaning, Preprocessing and EDA
+- [x] Model Development (Baselines, Gradient Boosting, Anomaly Detectors, Threshold Tuning)
 - [x] End-to-end verification and documented champion selection
 - [x] Monitoring dashboard
 - [ ] Reporting and decision support
